@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <header>hola desde html</header>
+    <h1>Empleados de pepito</h1>
+
+    <div>
+        Cantidad de empleados: {{cantidad_empleados}}
+    </div>
+
+    <div>
+        <!-- hay que poner en un bucle los elementos de las personas que queres tener porque son muchos y tenes que listar todos dentro de un list item para que concatene -->
+        <ul> 
+            {% for  empleado in listar_empleados %}
+                <li>
+                    Empleado {{empleado.id}}:
+                    {{empleado.nombre}}
+                    {{empleado.apellido}}
+                    <a href="detalle_empleados/{{empleado.id}}">Ver más</a>
+                    
+                </li>    
+            {% endfor %}
+        </ul>
+        <h2>Añadir empleados</h2>
+        <a href="nuevo_empleado">Agregar</a>
+        
+    </div>
+</body>
+</html>
